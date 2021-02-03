@@ -1,0 +1,37 @@
+version: '3.7'
+
+services:
+  redis:
+    image: redis:latest
+    networks:
+      - redis_network
+  app:
+    build:
+      context: .
+      dockerfile: ./docker/php/Dockerfile
+    depends_on:
+      - redis
+#    volumes:
+#      - ./:/app
+    environment:
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+      - SOURCE_HTTP_URL=http://guvm.mvd.ru/upload/expired-passports/list_of_expired_passports.csv.bz2
+    networks:
+      - redis_network
+      - app_network
+
+  haproxy:
+    image: haproxy:2.3
+    volumes:
+      - ./docker/haproxy/:/usr/local/etc/haproxy:ro
+    depends_on:
+      - app
+    networks:
+      - app_network
+    ports:
+      - "8080:8080"
+
+networks:
+  redis_network:
+  app_network:

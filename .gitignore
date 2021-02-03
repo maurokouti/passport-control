@@ -1,0 +1,8 @@
+composer.phar
+var
+vendor
+.idea/
+.data/
+.php_cs.cache
+.phpunit.result.cache
+psalm.xml

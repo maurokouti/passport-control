@@ -1,0 +1,16 @@
+**/*.log
+**/*.md
+**/*.php~
+**/._*
+**/.dockerignore
+**/.DS_Store
+**/.git/
+**/.gitattributes
+**/.gitignore
+**/.gitmodules
+**/.idea/
+**/docker-compose.yml
+.php_cs.cache
+docker
+var/
+vendor/

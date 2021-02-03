@@ -1,0 +1,36 @@
+{
+  "name": "maurokouti/passport-control",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Mauro Kouti",
+      "email": "maurokouti@protonmail.com"
+    }
+  ],
+  "require": {
+    "php": "^8.0",
+    "guzzlehttp/guzzle": "^7.2",
+    "guzzlehttp/psr7": "1.7.0",
+    "google/protobuf": "~3.14",
+    "ext-curl": "*",
+    "ext-json": "*",
+    "ext-bz2": "*",
+    "ext-redis": "*",
+    "psr/log": "^1.1",
+    "monolog/monolog": "^2.2",
+    "php-di/php-di": "^6.3",
+    "phpunit/php-timer": "^5.0",
+    "workerman/workerman": "^4.0"
+  },
+  "require-dev": {
+    "vimeo/psalm": "~4.4",
+    "psalm/plugin-phpunit": "~0.15",
+    "phpunit/phpunit": "^9.5",
+    "friendsofphp/php-cs-fixer": "^2.18"
+  },
+  "autoload": {
+    "psr-4": {
+      "App\\": "src/"
+    }
+  }
+}
